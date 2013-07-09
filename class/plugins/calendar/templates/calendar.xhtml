@@ -1,0 +1,204 @@
+<div id="spinner" class="spinner" style="display:none;">
+    <img id="img-spinner" src="/images/ajax-loader-4.gif" alt="Loading"/>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+    $("#spinner").bind("ajaxSend", function() {
+        $(this).show();
+    }).bind("ajaxStop", function() {
+        $(this).hide();
+    }).bind("ajaxError", function() {
+        $(this).hide();
+    });
+
+
+{if="$display_calendar_name == true"}
+        $.ajax({ 
+            method: "GET",
+            url: "{$api_controller_uri}?_method=getCalendarName&calendar_id={$calendar_id}&PHPSESSID={function="session_id()"}",
+            dataType: "json",
+            async: "false",
+        }).success(function(data) {
+            if (typeof data === 'object') {
+                $('#calendar_name').html('Kalender - '+data.name);
+            }
+        }).error(function(data) {
+            $('error_dialog').dialog({modal: true});
+        });
+{/if}
+        var calendar = $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                //right: 'year,month,agendaWeek,agendaDay'
+            },
+            theme: true,
+            firstDay: 1,
+            selectable: true,
+            selectHelper: true,
+{if="$calendar_create == true"}
+            editable: true,
+{else}
+            editable: false,
+{/if}
+            eventSources: [
+{loop="$event_sources"}
+                {
+                    url: '{$value.url}',
+                    color: '{$value.color}',
+                    textColor: '{$value.textColor}',
+                    error: {$value.error},
+                },
+{/loop}
+            ],
+{if="$calendar_create == true"}
+            select: function(start, end, allDay) {
+                $('#create_ocd_event_dialog').dialog( {
+                    modal: true,
+                    buttons: {
+                        "Hinzufügen": function() {
+                            var title = $('#user_event').val();
+                            if (title.length != 0) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "{$api_controller_uri}",
+                                    data: {
+                                        PHPSESSID: '{function="session_id()"}',
+                                        title: $('#ocd_person_id').val(),
+                                        start: new Date(start).getTime(),
+                                        end: new Date(end).getTime()
+                                    },
+                                    dataType: "json",
+                                }).success(function(data) {
+                                    createDialog('dialogs', 'Eintrag erstellt', 'Eintrag wurde erfolgreich erstellt');
+                                    calendar.fullCalendar('refetchEvents');
+                                }).error(function(data) {
+                                    createDialog('dialogs', 'Fehler', data.error);
+                                });
+                            }
+                            $(this).dialog('close');
+                            $('#user_event').val(null);
+                        },
+                        "Abbrechen": function() {
+                            $(this).dialog('close');
+                        },
+                    }
+                } );
+                calendar.fullCalendar('unselect');
+            },
+{/if}
+{if="$calendar_delete == true"}
+            eventClick: function(event) {
+
+                if ('calendar.ocd' in event) {
+                    if (!event['calendar.ocd'].delete) {
+                        createDialog('dialogs', 'Fehler', 'Eintrag darf nicht gelöscht werden', 2000);
+                        return false;
+                    }
+                }
+
+                if ('calendar.holiday' in event) {
+                    if (!event['calendar.holiday'].delete) {
+                        createDialog('dialogs', 'Fehler', 'Eintrag darf nicht gelöscht werden', 2000);
+                        return false;
+                    }
+                }
+
+                $('#confirm_delete_dialog').dialog({
+                    modal: true,
+                    buttons: {
+                        "Löschen": function() {
+                            $(this).dialog('close');
+                            $.ajax({
+                                type: "DELETE",
+                                url: "{$api_controller_uri}?id="+event._id+"&PHPSESSID={function="session_id()"}",
+                                dataType: "json"
+                            }).success(function(data) {
+                                createDialog('dialogs', 'Eintrag gelöscht', 'Eintrag wurde erfolgreich gelöscht');
+                                calendar.fullCalendar('refetchEvents');
+                            }).error(function(data) {
+                                createDialog('dialogs', 'Fehler', data.error);
+                            });
+                        },
+                        "Abbrechen": function() {
+                            $(this).dialog('close');
+                        },
+                    }
+                });
+
+                return false;
+            },
+{/if}
+{if="$calendar_update == true"}
+            eventResize: function(event) {
+
+                if ('calendar.ocd' in event) {
+                    if (!event['calendar.ocd'].update) {
+                        createDialog('dialogs', 'Fehler', 'Eintrag darf nicht verändert werden', 2000);
+                        return false;
+                    }
+                }
+
+                if ('calendar.holiday' in event) {
+                    if (!event['calendar.holiday'].update) {
+                        createDialog('dialogs', 'Fehler', 'Eintrag darf nicht verändert werden', 2000);
+                        return false;
+                    }
+                }
+
+                var startts = new Date(event.start).getTime();
+                var endts = new Date(event.end).getTime();
+                var eventstring = 'start='+startts+'&end='+endts+'&id='+event._id+'&PHPSESSID={function="session_id()"}';
+                $.ajax({
+                    type: "PUT",
+                    url: "{$api_controller_uri}?"+eventstring,
+                    dataType: "json",
+                }).success(function(data) {
+                    createDialog('dialogs', 'Eintrag geändert', 'Eintrag wurde erfolgreich geändert');
+                    calendar.fullCalendar('refetchEvents');
+                }).error(function(data) {
+                    createDialog('dialogs', 'Fehler', data.error);
+                    console.log(data.error);
+                });
+            },
+            eventDrop: function(event) {
+                calendar.fullCalendar('eventResize', event);
+            },
+{/if}
+        } );
+
+    });
+
+</script>
+
+{if="!empty($display_calendar_name)"}
+<h1 id="calendar_name">Kalender</h1>
+{/if}
+
+<div id="dialogs"></div>
+
+<div id="error_dialog" title="Fehler" style="display:none">Fehler beim Laden</div>
+
+<div id="confirm_dialog" style="display:none">Eintrag erfolgreich hinzugef&uuml;gt</div>
+
+<div id="calendar"></div>
+
+{if="$is_ocd_calendar == true"}
+<div id="create_ocd_event_dialog" title="Neues OCD Event erstellen" style="display:none">
+    <select id="ocd_person_id">
+    {loop="$ocd_persons"}
+        <option value="{$value.id}">{$value.person}</option>
+    {/loop}
+    </select>
+</div>
+{/if}
+
+<div id="dialog" title="Neuer Eintrag" style="display:none">
+    <p>Beschreibung:<input type="text" id="user_event"/></p>
+</div>
+
+<div id="confirm_delete_dialog" title="Event löschen" style="display:none">
+    Eintrag wirklich löschen?
+</div>

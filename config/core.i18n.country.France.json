@@ -1,0 +1,119 @@
+{
+    "name": "République française",
+    "timezone": "Europe/Paris",
+    "provinces": {
+        "AQ": "Aquitaine",
+        "AV": "Avergne",
+        "BN": "Basse-Normandie",
+        "BT": "Bretagne",
+        "BG": "Bourgogne",
+        "CE": "Centre",
+        "CA": "Champagne-Ardenne",
+        "AL": "Alsace",
+        "FC": "Franche-Comté",
+        "GU": "Guyane",
+        "GD": "Guadeloupe",
+        "HN": "Haute-Normandie",
+        "IF": "Île-de-France",
+        "CS": "Corse",
+        "LR": "Languedoc-Roussillion",
+        "LM": "Limousin",
+        "LO": "Lorraine",
+        "MT": "Martinique",
+        "MA": "Mayotte",
+        "MP": "Midi-Pyrénées",
+        "NC": "Nord-Pas-de-Calais",
+        "PL": "Pays de la Loire",
+        "PI": "Picardie",
+        "PC": "Poitou-Charentes",
+        "PAC": "Provence-Alpes-Côte d’Azur",
+        "RU": "Réunion",
+        "RA": "Rhône-Alpes"
+    },
+    "holiday_rules": [
+        {
+            "date": "01.01.YEAR",
+            "name": "Jour de l'An"
+        },
+        {
+            "date": "EASTER_DATE - 2 days",
+            "name": "Vendredi Saint",
+            "provinces": [ "AL", "LO", "MI", "GD" ]
+        },
+        {
+            "date": "EASTER_DATE + 1 day",
+            "name": "Lundi de Pâques"
+        },
+        {
+            "date": "27.04.YEAR",
+            "name": "Abolition de l’esclavage",
+            "provinces": [ "MA" ]
+        },
+        {
+            "date": "01.05.YEAR",
+            "name": "Fête du travail"
+        },
+        {
+            "date": "08.05.YEAR",
+            "name": "Fête de la Victoire (1945)"
+        },
+        {
+            "date": "22.05.YEAR",
+            "name": "Abolition de l’esclavage",
+            "provinces": [ "MT" ]
+        },
+        {
+            "date": "27.05.YEAR",
+            "name": "Abolition de l’esclavage",
+            "provinces": [ "GD" ]
+        },
+        {
+            "date": "EASTER_DATE + 39 days",
+            "name": "Ascension"
+        },
+        {
+            "date": "EASTER_DATE + 49 days",
+            "name": "Pentecôte"
+        },
+        {
+            "date": "EASTER_DATE + 50 days",
+            "name": "Lundi de Pentecôte",
+            "years": [ "1970-2003", "2009-now" ]
+        },
+        {
+            "date": "10.06.YEAR",
+            "name": "Abolition de l’esclavage",
+            "provinces": [ "GU" ]
+        },
+        {
+            "date": "14.07.YEAR",
+            "name": "Fête Nationale de la France"
+        },
+        {
+            "date": "15.08.YEAR",
+            "name": "Assomption"
+        },
+        {
+            "date": "01.11.YEAR",
+            "name": "Toussaint"
+        },
+        {
+            "date": "11.11.YEAR",
+            "name": "Armistice 1918"
+        },
+        {
+            "date": "20.12.YEAR",
+            "name": "Abolition de l’esclavage",
+            "provinces": [ "RU" ]
+        },
+        {
+            "date": "25.12.YEAR",
+            "name": "Noël"
+        },
+        {
+            "date": "26.12.YEAR",
+            "name": "Lendemain de Noël",
+            "provinces": [ "AL", "LO" ]
+        }
+    ]
+}

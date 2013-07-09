@@ -1,0 +1,122 @@
+{
+    "name": "Republik Österreich",
+    "provinces": {
+        "B": "Burgenland",
+        "K": "Kärnten",
+        "NOE": "Niederösterreich",
+        "OOE": "Oberösterreich",
+        "S": "Salzburg",
+        "ST": "Steiermark",
+        "T": "Tirol",
+        "V": "Vorarlberg",
+        "W": "Wien"
+    },
+    "holiday_rules": [
+        {
+            "date": "01.01.YEAR",
+            "name": "Neujahr"
+        },
+        {
+            "date": "06.01.YEAR",
+            "name": "Heilige drei Könige"
+        },
+        {
+            "date": "19.03.YEAR",
+            "name": "Josef",
+            "provinces": [ "K", "ST", "T", "V" ],
+            "types": [ 13, 14, 15 ]
+        },
+        {
+            "date": "EASTER_DATE - 2 days",
+            "name": "Karfreitag",
+            "types": [ 2 ]
+        },
+        {
+            "date": "EASTER_DATE",
+            "name": "Ostersonntag"
+        },
+        {
+            "date": "EASTER_DATE + 1 day",
+            "name": "Ostermontag"
+        },
+        {
+            "date": "EASTER_DATE + 39 days",
+            "name": "Christi Himmelfahrt"
+        },
+        {
+            "date": "EASTER_DATE + 49 days",
+            "name": "Pfingstsonntag"
+        },
+        {
+            "date": "EASTER_DATE + 50 days",
+            "name": "Pfingstmontag"
+        },
+        {
+            "date": "01.05.YEAR",
+            "name": "Staatsfeiertag"
+        },
+        {
+            "date": "04.05.YEAR",
+            "name": "Florian",
+            "provinces": [ "OOE" ],
+            "types": [ 13, 14, 15 ],
+            "years": [ "2004-now" ]
+        },
+        {
+            "date": "15.08.YEAR",
+            "name": "Mariä Himmelfahrt"
+        },
+        {
+            "date": "24.09.YEAR",
+            "name": "Rupertitag",
+            "provinces": [ "S" ],
+            "types": [ 13, 14, 15 ]
+        },
+        {
+            "date": "10.10.YEAR",
+            "name": "Tag der Volksabstimmung",
+            "provinces": [ "K" ],
+            "types": [ 13, 14, 15 ]
+        },
+        {
+            "date": "26.10.YEAR",
+            "name": "Nationalfeiertag"
+        },
+        {
+            "date": "01.11.YEAR",
+            "name": "Allerheiligen"
+        },
+        {
+            "date": "11.11.YEAR",
+            "name": "Martini",
+            "provinces": [ "B" ],
+            "types": [ 13, 14, 15 ]
+        },
+        {
+            "date": "15.11.YEAR",
+            "name": "Leopoldi",
+            "provinces": [ "NOE", "W" ],
+            "types": [ 13, 14, 15 ]
+        },
+        {
+            "date": "08.12.YEAR",
+            "name": "Mariä Empfängnis"
+        },
+        {
+            "date": "24.12.YEAR",
+            "name": "Heiliger Abend"
+        },
+        {
+            "date": "25.12.YEAR",
+            "name": "Christtag"
+        },
+        {
+            "date": "26.12.YEAR",
+            "name": "Stefanitag"
+        },
+        {
+            "date": "31.12.YEAR",
+            "name": "Silvester"
+        }
+    ]
+}

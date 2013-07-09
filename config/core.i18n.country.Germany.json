@@ -1,0 +1,112 @@
+{
+    "name": "Bundesrepublik Deutschland",
+    "date_format": "icu://EEEE', der' dd.MM.YYYY",
+    "timezone": "Europe/Berlin",
+    "provinces": {
+        "BW": "Baden-Württemberg",
+        "BY": "Bayern",
+        "BE": "Berlin",
+        "BB": "Brandenburg",
+        "HB": "Bremen",
+        "HH": "Hamburg",
+        "HE": "Hessen",
+        "MV": "Mecklenburg-Vorpommern",
+        "NI": "Niedersachen",
+        "NW": "Nordrhein-Westfalen",
+        "RP": "Rheinland Pfalz",
+        "SL": "Saarland",
+        "SN": "Sachsen",
+        "ST": "Sachsen-Anhalt",
+        "SH": "Schleswig-Holstein",
+        "TH": "Thüringen"
+    },
+    "holiday_rules": [
+        {
+            "date": "01.01.YEAR",
+            "name": "Neujahr"
+        },
+        {
+            "date": "06.01.YEAR",
+            "name": "Heilige drei Könige",
+            "provinces": [ "BW", "BY", "ST" ]
+        },
+        {
+            "date": "EASTER_DATE - 2 days",
+            "name": "Karfreitag"
+        },
+        {
+            "date": "EASTER_DATE",
+            "name": "Ostersonntag"
+        },
+        {
+            "date": "EASTER_DATE + 1 day",
+            "name": "Ostermontag"
+        },
+        {
+            "date": "01.05.YEAR",
+            "name": "Tag der Arbeit"
+        },
+        {
+            "date": "EASTER_DATE + 39 days",
+            "name": "Christi Himmelfahrt"
+        },
+        {
+            "date": "EASTER_DATE + 49 days",
+            "name": "Pfingstsonntag"
+        },
+        {
+            "date": "EASTER_DATE + 50 days",
+            "name": "Pfingstmontag"
+        },
+        {
+            "date": "EASTER_DATE + 60 days",
+            "name": "Fronleichnam",
+            "provinces": [ "BW", "BY", "HE", "NW", "RP", "SL", "SN", "TH" ]
+        },
+        {
+            "date": "08.08.YEAR",
+            "name": "Augsburger Friedensfest",
+            "provinces": [ "BB" ]
+        },
+        {
+            "date": "15.08.YEAR",
+            "name": "Mariä Himmelfahrt",
+            "provinces": [ "SL", "BY" ]
+        },
+        {
+            "date": "03.10.YEAR",
+            "name": "Tag der deutschen Einheit"
+        },
+        {
+            "date": "31.10.YEAR",
+            "name": "Reformationstag",
+            "provinces": [ "BB", "MV", "SN", "ST", "TH" ]
+        },
+        {
+            "date": "01.11.YEAR",
+            "name": "Allerheiligen",
+            "provinces": [ "BW", "BY", "NW", "RP", "SL" ]
+        },
+        {
+            "date": "26.11.YEAR first sunday -11 days",
+            "name": "Buß- und Bettag",
+            "provinces": [ "SN" ]
+        },
+        {
+            "date": "24.12.YEAR",
+            "name": "Heilig Abend (Bankfeiertag)"
+        },
+        {
+            "date": "25.12.YEAR",
+            "name": "1. Weihnachtsfeiertag"
+        },
+        {
+            "date": "26.12.YEAR",
+            "name": "2. Weihnachtsfeiertag"
+        },
+        {
+            "date": "31.12.YEAR",
+            "name": "Silvester (Bankfeiertag)"
+        }
+    ]
+}

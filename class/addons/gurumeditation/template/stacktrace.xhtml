@@ -1,0 +1,9 @@
+<div>
+    <pre style="border: 1px solid black; background-color: lightblue; padding: 5px; margin: 5px"><b>Detailed PHP Stacktrace:</b>
+        <div style="background-color: lightyellow; overflow: scroll; max-height: 350px;">
+{loop="$stacktrace"}
+<i>in file <b>{$value.file}</b> line <b>{$value.line}</b>:</i>{$value.string}
+{/loop}
+        </div>
+    </pre>
+</div>

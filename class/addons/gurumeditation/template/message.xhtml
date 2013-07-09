@@ -1,0 +1,20 @@
+<table onclick="guru_popallboxes(event)" style="cursor: pointer; width:100%; border:0px; margin:0px; padding:0px; border-spacing:0px;">
+    <tr style="border-spacing:0px; border:0px; margin:0px; padding:0px; height:10px">
+        <td style="border-spacing:0px; border:0px; margin:0px; padding:0px;" class="guru_blink_off" id="guru_td1" colspan="3"></td>
+    </tr>
+    <tr style="border-spacing:0px;border:0px; margin:0px; padding:0px; height:70px">
+        <td style="border-spacing:0px; border:0px; margin:0px; padding:0px; width:10px" class="guru_blink_off" id="guru_td2" ></td>
+        <td style="border-spacing:0px; border:0px; margin:0px; padding:0px; vertical-align:top; background-color:#000000 ;text-align: center; color:#A00000">
+            <span style="font-size:22pt; letter-spacing:3;"><b>Quantum Framework Software Failure</b><br/><b>Guru Meditation {$id}</b></span>
+            <br/><br/>
+            <div style="background-color:#000;border:0;font-size:10px;color:#FFF;width:95%;" height="{$lines}em">
+                <span style="align:left">Exception <b>{$exception_class}</b> with message: {$message}</span>
+                <br\><textarea style="background-color:#000;border:0;font-size:10px;color:#FFF;width:95%;" readonly="readonly" rows="{$lines}">Stacktrace:{$stacktrace}</textarea>
+            </div>
+        </td>
+        <td style="width:10px" class="guru_blink_off" id="guru_td3"></td>
+    </tr> 
+    <tr style="border-spacing:0px;border:0px; margin:0px; padding:0px; height:10px">
+        <td style="border-spacing:0px; border:0px; margin:0px; padding:0px;" class="guru_blink_off" id="guru_td4" colspan="3"></td>
+    </tr>
+</table>

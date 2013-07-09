@@ -1,0 +1,8 @@
+{
+    "gurumeditation": {
+        "id": {$id},
+        "exception": "{$exception_class}",
+        "message": "{$message}"
+        "stacktrace": "{$stacktrace}"
+    }
+}

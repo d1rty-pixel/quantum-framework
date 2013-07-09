@@ -1,0 +1,7 @@
+{
+    "countries": {
+        "DE": "\\core\\qdatetime\\holiday\\Germany",
+        "CH": "\\core\\qdatetime\\holiday\\Austria"
+    },
+    "default_country": "DE"
+}

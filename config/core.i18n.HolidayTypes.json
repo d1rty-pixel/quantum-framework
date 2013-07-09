@@ -1,0 +1,21 @@
+{
+    "default_type_id": 1,
+    "types": {
+        "0": "other",
+        "1": "national",
+        "2": "religious (christian)",
+        "3": "half day",
+        "4": "like sunday",
+        "5": "unofficial",
+        "6": "not in whole province",
+        "7": "civil services closed",
+        "8": "civil services opened",
+        "9": "businesses opened",
+        "10": "schools opened",
+        "11": "religious (islamic)",
+        "12": "religious (jewish)",
+        "13": "regulated by province",
+        "14": "schools closed",
+        "15": "business closed"
+    }
+}

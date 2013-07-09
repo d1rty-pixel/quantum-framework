@@ -1,0 +1,82 @@
+{
+    "name": "Deutsche Demokratische Republik"
+    "timezone": "Europe/Berlin",
+    "provinces": {  },
+    "holiday_rules": [
+        {
+            "date": "01.01.YEAR",
+            "name": "Neujahr",
+            "years": [ "1949-1990" ]
+        },
+        {
+            "date": "EASTER_DATE - 2 days",
+            "name": "Karfreitag",
+            "years": [ "1949-1990" ]
+        },
+        {
+            "date": "EASTER_DATE",
+            "name": "Ostersonntag",
+            "years": [ "1949-1990" ]
+        },
+        {
+            "date": "EASTER_DATE + 1 day",
+            "name": "Ostermontag",
+            "years": [ "1949-1967", "1990" ]
+        },
+        {
+            "date": "01.05.YEAR",
+            "name": "Internationaler Kampf- und Feiertag der Werktätigen für Frieden und Sozialismus",
+            "years": [ "1949-1990" ]
+        },
+        {
+            "date": "08.05.YEAR",
+            "name": "Tag der Befreiung",
+            "years": [ "1949-1967", "1985" ]
+        },
+        {
+            "date": "09.05.YEAR",
+            "name": "Tag des Sieges",
+            "years": [ "1975" ]
+        },
+        {
+            "date": "EASTER_DATE + 39 days",
+            "name": "Christi Himmelfahrt",
+            "years": [ "0-1967", "1990" ]
+        },
+        {
+            "date": "EASTER_DATE + 49 days",
+            "name": "Pfingstsonntag",
+            "years": [ "1949-1990" ]
+        },
+        {
+            "date": "EASTER_DATE + 50 days",
+            "name": "Pfingstmontag",
+            "years": [ "1949-1990" ]
+        },
+        {
+            "date": "07.10.YEAR",
+            "name": "Tag der Republik",
+            "years": [ "1949-1990" ]
+        },
+        {
+            "date": "31.10.YEAR",
+            "name": "Reformationstag",
+            "years": [ "1949-1966" ]
+        },
+        {
+            "date": "26.11.YEAR first sunday -11 days",
+            "name": "Buß- und Bettag",
+            "years": [ "1949-1966" ]
+        },
+        {
+            "date": "25.12.YEAR",
+            "name": "1. Weihnachtsfeiertag",
+            "years": [ "1949-1990" ]
+        },
+        {
+            "date": "26.12.YEAR",
+            "name": "2. Weihnachtsfeiertag",
+            "years": [ "1949-1990" ]
+        }
+    ]
+}

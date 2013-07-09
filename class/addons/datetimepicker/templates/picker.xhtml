@@ -1,0 +1,30 @@
+<!-- BEGIN doc -->
+ELEM: element name
+LABEL: label for date/timepicker
+TYPE: either one of date, time or datetime (-picker)
+LANGUAGE_SHORT: 'de' for example
+CONFIG: json array with initial config, suiting for TYPE
+FUNC: one of (set)Date or -Time
+SET: date/time to set
+<!-- END doc -->
+
+<!-- BEGIN xhtml_container --> 
+<fieldset style="border:0">
+    <label for="%%ELEM%%">%%LABEL%%</label>
+    <input type="text" name="%%ELEM%%" id="%%ELEM%%" />
+</fieldset>
+<!-- END xhtml_container -->
+
+<!-- BEGIN jquery_container -->
+<script type="text/javascript">
+$('#%%ELEM%%').%%TYPE%%picker(%%CONFIG%%);
+jQuery( function($) {
+    <!-- BEGIN localization --> 
+    $.%%TYPE%%picker.setDefaults($.%%TYPE%%picker.regional['%%LANGUAGE_SHORT%%']);
+    <!-- END localization --> 
+    <!-- BEGIN init -->
+    $.%%TYPE%%picker.set%%FUNC%%('%%SET%%');
+    <!-- END init -->
+});
+</script>
+<!-- END jquery_container -->

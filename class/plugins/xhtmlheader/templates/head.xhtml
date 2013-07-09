@@ -1,0 +1,16 @@
+<head>
+    <title>{$title}</title>
+{loop="$meta"}
+    {if="!empty($value.charset)"}
+    <meta charset="{$value.charset}">
+    {else}
+    <meta name="{$value.name}" content="{$value.content}">
+    {/if}
+{/loop}
+{loop="$links"}
+    <link rel="{$value.rel}" type="{$value.type}" href="{$value.href}" />
+{/loop}
+{loop="$scripts"}
+    <script type="{$value.type}" src="{$value.src}"></script>
+{/loop}
+</head>

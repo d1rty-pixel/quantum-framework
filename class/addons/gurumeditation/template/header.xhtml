@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>make("GuruMeditation")</title>
+    <style type="text/css">
+        .guru_blink_on { 
+            background-color:#A00000;
+        }
+        .guru_blink_off {   
+            background-color:#000000;
+            border-spacing:0px;
+        }
+        .guru_box_visible {   
+            display:block;
+            margin: 3px;
+        }
+        .guru_box_invisible {   
+            display:none;
+        }
+    </style>
+    <script language="JavaScript">
+        var allPopped = false;
+        function guru_blink(e) {
+            guru_1 = document.getElementById ("guru_td1");
+            guru_2 = document.getElementById ("guru_td2");
+            guru_3 = document.getElementById ("guru_td3");
+            guru_4 = document.getElementById ("guru_td4");
+    
+            if (guru_1.className=="guru_blink_on") {
+                guru_1.className="guru_blink_off";
+                guru_2.className="guru_blink_off";
+                guru_3.className="guru_blink_off";
+                guru_4.className="guru_blink_off";
+            } else {
+                guru_1.className="guru_blink_on";
+                guru_2.className="guru_blink_on";
+                guru_3.className="guru_blink_on";
+                guru_4.className="guru_blink_on";
+            }
+            setTimeout("guru_blink()", 700);
+        }
+        function guru_popbox (e) {
+            e = (e) ? e : (window.event) ? window.event : "";
+            elem = (e.target) ? e.target : e.srcElement;
+            while (elem.id.substr(0,13) != "guru_box_head") {
+                elem = (elem.parentElement) ? elem.parentElement : elem.parentNode;
+            }
+
+            if (elem.id.substr(0,13)== "guru_box_head" || elem.id.substr(0,13)== "guru_box_body") {
+                elem2 = document.getElementById ( "guru_box_body" + elem.id.substr(13) );
+                if (elem2.className=="guru_box_visible") elem2.className="guru_box_invisible";
+                else elem2.className="guru_box_visible";
+            }
+        }
+        function guru_popallboxes (e) {
+            e = (e) ? e : (window.event) ? window.event : "";
+            elem = (e.target) ? e.target : e.srcElement;
+            if (allPopped == true) allPopped = false;
+            else allPopped = true;
+            i = 0;
+            while (elem != null) {
+                i++;
+                elem = document.getElementById("guru_box_body"+i);
+                if (elem != null) {
+                    if (allPopped == true) elem.className="guru_box_visible"
+                    else elem.className="guru_box_invisible";
+                }
+            }
+        }
+    </script>
+</head>
+<body style="background-color: black" onload="guru_blink(event)">

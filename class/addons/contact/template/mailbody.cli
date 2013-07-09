@@ -1,0 +1,24 @@
+%%SUBJECT%%
+<!-- BEGIN name -->
+Vor, Nachname   %%PRENAME%%, %%NAME%%
+<!-- END name -->
+<!-- BEGIN address -->
+Anschrift       %%STREET%% %%STREET_NUMBER%%
+                %%ZIPCODE%% %%TOWN%%
+<!-- END address -->
+<!-- BEGIN phone1 -->
+Telefon         %%PHONE1%%
+<!-- END phone1 -->
+<!-- BEGIN mobile1 -->
+Mobil           %%MOBILE1%%
+<!-- END mobile1 -->
+<!-- BEGIN birthdate -->
+Geburtsdatum    %%BIRTHDATE%%
+<!-- END birthdate -->
+<!-- BEGIN email -->
+EMail           %%EMAIL%%
+<!-- END email -->
+<!-- BEGIN message -->
+Nachricht
+%%MESSAGE%%
+<!-- END message -->

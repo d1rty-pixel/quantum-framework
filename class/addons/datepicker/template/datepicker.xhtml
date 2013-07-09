@@ -1,0 +1,67 @@
+<table class="form">
+    <tr><th class="form">Select a Time Period</th>
+        <th class="form" width="20px"><img id="img_toggle_datepicker" src="/images/hide.png" border="0" onClick="javascript:toggle_visibility('datepicker_select', 'img_toggle_datepicker')" /></th>
+    </tr>
+    <tr><td colspan="2">
+        <form action="%%ACTION_PATH_SCRIPT%%" method="post">
+<!-- BEGIN hidden_input -->
+        <input type="hidden" name="%%HIDDEN_NAME%%" value="%%HIDDEN_VALUE%%" />
+<!-- END hidden_input -->
+        <div id="datepicker_select">
+        <table width="100%">
+            <tr style="vertical-align:top">
+                <td class="label">Start</td>
+                <td>
+<!-- BEGIN is_timepicker_start -->
+<input type="text" name="start_hour" value="%%START_HOUR%%" size="2" />:<input type="text" name="start_minute" value="%%START_MINUTE%%" size="2"/> Uhr<br />
+<!-- END is_timepicker_start -->
+<input type="text" name="start_date" value="%%START_DATE%%" size="10" /> <img src="/images/datepicker/cal.gif" width="16" height="16" border="0" alt="Datum ausw&auml;hlen" onClick="displayDatePicker('start_date', false, 'dmy', '.');" />
+                </td>
+                <td class="label">Ende</td>
+                <td>
+<!-- BEGIN is_timepicker_end -->
+<input type="text" name="end_hour" value="%%END_HOUR%%" size="2" />:<input type="text" name="end_minute" value="%%END_MINUTE%%" size="2"/> Uhr<br />
+<!-- END is_timepicker_end -->
+<input type="text" name="end_date" id="dpenddate" value="%%END_DATE%%" size="10" /> <img id="dp_displayend" src="/images/datepicker/cal.gif" width="16" height="16" border="0" alt="Datum ausw&auml;hlen" onClick="displayDatePicker('end_date', false, 'dmy', '.');" />
+                </td>
+                <td class="label">Intervall</td>
+                <td>%%INTERVAL%%
+<!-- BEGIN buttons -->
+                    <br />
+    <!-- BEGIN prev_interval -->
+<a href="?start_ts=%%START_TS%%&end_ts=%%END_TS%%%%PARAM%%">%%VALUE%% %%UNIT%% zur&uuml;ck</a>
+    <!-- END prev_interval -->
+|
+    <!-- BEGIN next_interval -->
+<a href="?start_ts=%%START_TS%%&end_ts=%%END_TS%%%%PARAM%%">%%VALUE%% %%UNIT%% weiter</a>
+    <!-- END next_interval -->
+<!-- END buttons -->
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6"><input type="submit" class="apply" value="Update" /></td>
+            </tr>
+        </table>
+        </div>
+        </form>
+    </td></tr>
+</table>
+<script type="text/javascript">
+/* <![CDATA[ */
+    $('#dpenddate').change(function() {
+        $('#dpintervalselect').val('user');
+    } );
+
+    $('#dp_displayend').click(function() {
+        $('#dpenddate').removeAttr('disabled');       
+    } );
+
+    $('#dpintervalselect').change(function() {
+        if ($('#dpintervalselect').val() == "user") {
+            $('#dpenddate').removeAttr('disabled');       
+        } else {
+            $('#dpenddate').attr('disabled', true);       
+        }
+    } );
+/* ]]> */
+</script>
