@@ -7,7 +7,6 @@ uses ("core.debug.StackTraceElement", "core.base.Singleton", "addon.gurumeditati
 /**
  * Class GuruMeditationException
  *
- * @deprecated The Quantum Framework
  * @author Tristan Cebulla <t.cebulla@lichtspiele.org>
  * @copyright 2006 - 2008
  * @package core.exceptions
